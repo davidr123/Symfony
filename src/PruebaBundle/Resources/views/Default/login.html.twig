@@ -1,6 +1,7 @@
 {% block stylesheets %}
   <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
 {% endblock %}
 
 {% block body %}
@@ -38,8 +39,46 @@
       
     </div>
     
-    <div id="menusesion">
-        <h1>INICIE SESION</h1>
-        </div>
+    <div id="registrar">
+
+</div> <!-- fin opcion-->
+ 
+    <div id="envoltura">
+        <div id="contenedor">
+ 
+            <div id="cabecera" >
+                <img src="./css/images/logo.gif">
+            </div>
+ 
+            <div id="cuerpo">
+                <form id="form-login" action="" method="post" autocomplete="off">
+                    <!--A saber, el atributo for funciona como el id.-->
+                    <!--ejemplo <label for="usuario">Usuario:</label>-->
+                    <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
+                    <p><label >Usuario:</label></p>
+                        <input name="usuario" type="text" id="usuario" placeholder="Ingresa Usuario" autofocus="" required=""></p>
+ 
+                    <p><label>Contraseña:</label></p>
+                        <input name="contrasenia" type="password" id="contrasenia" placeholder="Ingresa Password" required=""></p>
+ 
+                    <p id="bot"><input type="submit" id="submit" name="submit" value="Ingresar" class="boton"></p>
+            
+             <div id="menu_registrologin">
+	   
+      </div> <!-- termina menu_tems -->
+                            </form>
+            </div><!--fin cuerpo-->
+ 
+            <div id="pie">Sistema de Login Y Registro
+    
+   
+    
+    </div>
+    
+    
+    
+        </div><!-- fin contenedor -->
+    </div><!--fin envoltura-->
+    
     </body>
 {% endblock %}

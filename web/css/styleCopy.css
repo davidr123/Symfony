@@ -20,15 +20,17 @@ img {
 
 h1 { 
     font: normal 175% Arial, Helvetica, sans-serif;
-    color: #000;
+    color: #667AAD;
     letter-spacing: -1px;
     margin: 0 0 10px 0;
+    text-align: center;
+   font:bold 120px;
 }
 
 a { 
     color: #2F291D;
     font-weight: bold;
-    text-decoration: underline;
+    
 }
 
 
@@ -37,7 +39,7 @@ a2{
     color: #2F291D;
    
     font-weight: bold;
-    text-decoration: underline;
+   
 }
 
 
@@ -52,6 +54,35 @@ ul {
     font-size: 100%;
 }
 
+
+ul1 { 
+    margin: 2px 0 22px 30px;
+  
+    
+    font-size: 65%;
+}
+
+li1{
+    
+     list-style: none;
+    padding: 0 0 0 0px;
+    margin: 2px 0 0 0;
+    display: inline;
+   margin-top: 12px;
+    
+}
+
+
+  #menudeloginreg {
+    margin-top: 10px;
+    width: 50px;
+    height: 70px;
+  
+    border-radius: 0px 0px 15px 15px;
+} 
+
+
+
 #menubar { 
     width: 920px;
     height: 50px;
@@ -62,10 +93,15 @@ ul {
 
 
 #menubotones { 
+
+
+ margin-top: 400px;
     width: 920px;
     height: 50px;
     
     border-radius: 0px 0px 15px 15px;
+    
+   
 } 
   
   
@@ -78,8 +114,16 @@ ul {
 }
   
 #menu_items { 
+
+
     float: right;
     width: 560px;
+}
+
+
+#menu_registrologin { 
+   
+    width: 100px;
 }
   
 ul#menu { 
@@ -126,11 +170,19 @@ ul#menu li.current a, ul#menu li:hover a {
     border-radius: 0px 0px 15px 15px;
 } 
 
-#menusesion { 
+#menusesion {
+    margin-top: 30px;
     width: 500px;
-    height: 50px;
-    background: RGB(0,28,63);
+    height: 35px;
+
     border-radius: 0px 0px 15px 15px;
 } 
 
+  #menuloginreg {
+    margin-top: 10px;
+    width: 500px;
+    height: 120px;
   
+    border-radius: 0px 0px 15px 15px;
+} 
+
