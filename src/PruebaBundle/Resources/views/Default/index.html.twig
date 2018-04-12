@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+{% endblock %}
+
+{% block body %}
+
+      <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+         
+	     <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+          <li class="current"><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li><a href="{{path('prueba_login')}}">login</a></li>
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+    
+	<div id="site_content">		
+  
+
+          <img src="{{asset('images/fondo.jpg')}}" height="750px" width="900px"   accesskey="" >      
+                  
+         
+        
+        <div id="seccion1">
+          
+
+          
+        </div>
+        
+      
+        
+        
+     
+	</div> <!-- termina site_content --> 
+  
+  </div> <!-- termina main -->
+    
+
+{% endblock %}

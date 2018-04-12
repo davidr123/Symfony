@@ -1,0 +1,27 @@
+{% block menu %}
+<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+         
+	     <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+          <li class="current"><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li><a href="{{path('prueba_login')}}">login</a></li>
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+{% endblock %}

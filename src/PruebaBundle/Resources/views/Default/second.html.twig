@@ -1,0 +1,74 @@
+{% block head %}
+<head>
+        <style> 
+     
+ 
+     
+        
+     * {
+        box-sizing: border-box;
+        margin: 0 auto; 
+    }
+        
+  div.container {
+        width: 80%;
+        border: 3px solid black;
+        background-color: aqua;
+    }
+
+    
+    </style>
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+{% endblock %}
+{% endblock %}
+    </head>
+{% block body %}
+<body>
+        
+         
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+        <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+          <li class="current"><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li><a href="{{path('prueba_login')}}">login</a></li>
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+        
+        
+       <div id="menubotones">
+           
+           
+           <input type="text" size="15" maxlength="30" value="Nombre Vulgar" name="nombre">
+            <input type="text" size="15" maxlength="30" value="Nombre Cientifico" name="nombre">
+           
+           <INPUT type="submit" value="Buscar"> </INPUT>
+           <INPUT type="submit" value="Restablecer"> </INPUT>
+           <INPUT type="submit" value="Ver Imagen"> </INPUT>
+        
+         </div>
+       
+       -
+             
+            
+    </body>
+{% endblock %}

@@ -1,0 +1,12 @@
+prueba_homepage:
+    path:     /
+    defaults: { _controller: PruebaBundle:Default:index }
+prueba_second:
+    path:     /second
+    defaults: { _controller: PruebaBundle:Default:second }
+prueba_contactos:
+    path:     /contactos
+    defaults: { _controller: PruebaBundle:Default:contactos }
+prueba_login:
+    path:     /login
+    defaults: { _controller: PruebaBundle:Default:login }

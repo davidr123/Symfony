@@ -1,0 +1,71 @@
+#seccion1{
+    margin-top: 10px;
+    float: left;
+    width: 700px;
+    height: 170px;
+    margin: 10px;
+    
+}
+
+.after -box{
+    
+    clear: left;
+    
+}
+
+# seccion2{
+    
+    margin-top: 10px;
+    float: right;
+    width: 1000px;
+    height: 300px;
+    margin: 10px;
+    
+}
+
+.after -box{
+    clear: right;
+}
+
+. seccion3{
+    
+    margin-top: 10px;
+    float: right;
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+    
+}
+
+.after -box{
+    clear: right;
+}
+
+#seccion4{
+    
+    margin-top: 10px;
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 5px;
+    
+
+    
+}
+
+#seccion5{
+    
+    margin-top: 10px;
+    float: left;
+    width: 400px;
+    height: 100px;
+    margin: 5px;
+    
+
+    
+}
+
+#menuiconos{ 
+    float: left;
+    width: 560px;
+}
