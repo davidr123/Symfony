@@ -10,3 +10,18 @@ prueba_contactos:
 prueba_login:
     path:     /login
     defaults: { _controller: PruebaBundle:Default:login }
+    
+productos:
+    path:     /productos
+    defaults: { _controller: PruebaBundle:Producto:all }
+
+registro:
+    path:     /registro
+    defaults: { _controller: PruebaBundle:Default:registro }
+ingresoprod:
+    path:     /ingresoprod
+    defaults: { _controller: PruebaBundle:Producto:dibujarFormProducto }
+
+modeloingresoprod:
+    path:     /modeloingresoprod
+    defaults: { _controller: PruebaBundle:Producto:modcrearProducto }

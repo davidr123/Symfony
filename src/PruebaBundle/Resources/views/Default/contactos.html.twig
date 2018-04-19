@@ -1,1 +1,56 @@
-conta
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+{% endblock %}
+
+
+{% block body %}
+
+
+<body>
+        
+         
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+         
+	
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+          
+    
+            
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+         <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+            
+            <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li class="current"><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li ><a href="{{path('prueba_login')}}">login</a></li>
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+        
+        
+        
+    </div> <!-- termina menubar-->
+
+        
+          <div id="contactos">
+              <h7>Msg. Daniela Peñafiel - FCV(Facultad Ciencias de la vida)</h7>   <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >
+               <h7>Msg. Diego Carrera - EDCOM(Escuela de Diseño y Comunicacion Visual)</h7>
+              <h7>Estudiante-Pregrado. Freddy Rada - EDCOM(Escuela de Diseño y Comunicacion Visual)</h7>
+        </div>
+        
+    </body>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% block head %}
+<head>
+        <style> 
+     
+ 
+     
+        
+     * {
+        box-sizing: border-box;
+        margin: 0 auto; 
+    }
+        
+  div.container {
+        width: 80%;
+        border: 3px solid black;
+        background-color: aqua;
+    }
+
+    
+    </style>
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+{% endblock %}
+{% endblock %}
+    </head>
+{% block body %}
+<body>
+        
+         
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+        <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+          <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li class="current"><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li><a href="{{path('prueba_login')}}">login</a></li>
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+        
+        
+    <div id="menubotones">
+           
+           
+           <input type="text" size="15" maxlength="30" placeholder="Nombre Vulgar" name="nombre">
+            <input type="text" size="15" maxlength="30" placeholder="Nombre Cientifico" name="nombre">
+           
+        <a href="{{path('prueba_homepage')}}"><button>Buscar</button>   </a>
+       <a href="buscar.php"><button>Restablecer</button>   </a>
+        <a href="buscar.php"><button>Ver Imagen</button>   </a>
+        
+         </div>
+        
+        
+            <div id="seccion2">
+              
+             <table border="2px"> 
+            <tr>
+               
+                <td  bgcolor=RGB(0,28,63)>  <font color= "white">No.</font></td>
+                <td bgcolor=RGB(0,28,63) > <font color= "white">DESCRIPCION</font></td>
+                <td bgcolor=RGB(0,28,63) > <font color= "white">FUENTE</font></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td> </td>
+                 <td> </td>
+            </tr>
+           
+                 {% for producto in productos %}
+                <tr>
+                <td> {{producto.id}}</td>
+                 <td> {{producto.nombrevulgar}}</td>
+                <td> {{producto.fuente}}</td>
+                 </tr>
+                 {% endfor %}
+               
+                
+           
+            
+            
+            
+              
+            
+        </table>
+        
+         </div>
+       
+       
+       
+       -
+             
+            
+    </body>
+{% endblock %}

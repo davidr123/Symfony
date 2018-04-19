@@ -16,7 +16,9 @@ class DefaultController extends Controller
   
     public function secondAction()
     {
-        return $this->render('@Prueba/Default/second.html.twig');
+         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Productos');
+        $productos=$repository->findAll();
+        return $this->render('@Prueba/Productos/index.html.twig', array('productos'=>$productos));
     }
     public function contactosAction()
     {
@@ -26,4 +28,11 @@ class DefaultController extends Controller
     {
         return $this->render('@Prueba/Default/login.html.twig');
     }
+    
+    public function registroAction()
+    {
+        return $this->render('@Prueba/Default/registro.html.twig');
+    }
+   
+    
 }

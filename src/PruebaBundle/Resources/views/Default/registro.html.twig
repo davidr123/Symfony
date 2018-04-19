@@ -1,0 +1,111 @@
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+{% endblock %}
+
+
+{% block body %}
+
+<body>
+  <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+          
+          
+         
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+          
+    
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+         <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              <li class="current"><a href="{{path('prueba_login')}}">login</a></li>
+  
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+      
+      
+    </div>
+    
+    <div id="menusesion">
+        <h1 font color= blue>REGISTRO</h1>
+    </div>
+    
+    
+    
+     <div id="registrar">
+
+</div> <!-- fin opcion-->
+ 
+    <div id="envoltura">
+        <div id="contenedor">
+ 
+            <div id="cabecera" >
+                     <img src="{{ asset('images/fondop.png')}}" height="50px" width="50px"   accesskey=""     >     
+            </div>
+ 
+            <div id="cuerpo">
+                <form id="form-login" action="" method="post" autocomplete="off">
+                    <!--A saber, el atributo for funciona como el id.-->
+                    <!--ejemplo <label for="usuario">Usuario:</label>-->
+                    <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
+                    <p><label >Nombre:</label></p>
+                       <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+ 
+                    <p><label>Cedula/RUC:</label></p>
+                        <p>  <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+            
+              <p><label >Telefono:</label></p>
+                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+ 
+                    <p><label>Correo Electronico:</label></p>
+                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+    
+       <p><label >Direccion:</label></p>
+                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+ 
+                    <p><label>Usuario:</label></p>
+                       <p>    <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+
+<p><label>Contraseña:</label></p>
+                         <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+ 
+                    <p id="bot"><input type="submit" id="submit" name="submit" value="Registar" class="boton"></p>
+            
+           
+                            </form>
+            </div><!--fin cuerpo-->
+ 
+            <div id="pie">Sistema de Registro
+    
+   
+    
+    </div>
+    
+    
+    
+        </div><!-- fin contenedor -->
+    </div><!--fin envoltura-->
+    
+
+  
+    
+    
+    </body>
+{% endblock %}
