@@ -10,11 +10,12 @@ use PruebaBundle\Entity\Ficha_Tecnica;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use PruebaBundle\Form\Product;
+use PruebaBundle\Form\ProductosType;
+use PruebaBundle\Form\Ficha_TecnicaType;
 
 class ProductoController extends Controller
 {
-public $bandera=false;    
+   
     
     public function allAction()
     {
@@ -22,25 +23,51 @@ public $bandera=false;
         $productos=$repository->findAll();
         return $this->render('@Prueba/Productos/index.html.twig', array('productos'=>$productos));
     }
+    
+     public function dibujarFormFichaAction(Request $request)
+    {
+
+         
+  
+ 
+          $form = $this->createForm(Ficha_TecnicaType::class);
+        
+   
+    
+    return $this->render('@Prueba/Productos/ingresoprod.html.twig', ["form" => $form->createView()]);
+}
+
      public function dibujarFormProductoAction(Request $request)
     {
        $producto = new Productos();
          
   
  
-    $form = $this->createForm(\PruebaBundle\Form\Product::class, $producto);
- 
-    $form->handleRequest($request);
+          $form = $this->createForm(ProductosType::class, $producto);
+        $form->handleRequest($request);
  
     if ($form->isSubmitted() && $form->isValid())
     {
         $em = $this->getDoctrine()->getManager();
         $em->persist($producto);
         $em->flush();
-        return $this->redirectToRoute('modeloingresoprod');
+        return $this->redirectToRoute('mensaje');
     }
+   
+    
     return $this->render('@Prueba/Productos/ingresoprod.html.twig', ["form" => $form->createView()]);
 }
+    
+    
+       public function mensajeAction()
+    {
+          
+       
+    
+      return $this->render('@Prueba/Productos/mensaje.html.twig');
+     
+     }
+    
      
        public function modcrearProductoAction()
     {
@@ -50,6 +77,7 @@ public $bandera=false;
       return $this->render('@Prueba/Productos/mensaje.html.twig');
      
      }
+    
     
 }
   

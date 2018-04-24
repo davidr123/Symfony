@@ -1,14 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+ <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+{% endblock %}
+
 {% block body %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+
 <body>
+    
+         
+    	<div id="menubar">
+            
+            
+    </div>
+    
+   <h2 class="text-center text-muted">Ingreso de productos</h2><hr>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 {# src/Prueba/PruebaBundle/Resources/views/Default/new.html.twig #}
 
-
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-
+<div class="col-md-6 col-md-offset-3 person">
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+ 
     {{ form_end(form) }}
     
-      
-  
+    
+ 
 </body>
 {% endblock %}

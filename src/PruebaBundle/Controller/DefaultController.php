@@ -33,6 +33,12 @@ class DefaultController extends Controller
     {
         return $this->render('@Prueba/Default/registro.html.twig');
     }
+    
+    
+     public function registroAdminAction()
+    {
+        return $this->render('@Prueba/Default/administrador.html.twig');
+    }
    
     
 }

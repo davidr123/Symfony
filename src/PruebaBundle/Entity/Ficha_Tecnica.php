@@ -49,7 +49,7 @@ class Ficha_Tecnica
      * @ORM\ManyToOne(targetEntity="Productos", inversedBy="ficha_tecnica")
      * @ORM\JoinColumn(name="producto_id", referencedColumnName="id")
      */
-    private $productosIdProducto;
+    private $producto;
   
 
 

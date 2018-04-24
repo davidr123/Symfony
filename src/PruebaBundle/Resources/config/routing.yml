@@ -15,13 +15,27 @@ productos:
     path:     /productos
     defaults: { _controller: PruebaBundle:Producto:all }
 
-registro:
+registr o:
     path:     /registro
     defaults: { _controller: PruebaBundle:Default:registro }
 ingresoprod:
     path:     /ingresoprod
     defaults: { _controller: PruebaBundle:Producto:dibujarFormProducto }
 
+ingresofichaprod:
+    path:     /ingresoficha
+    defaults: { _controller: PruebaBundle:Producto:dibujarFormFicha }
+
+mensaje:
+    path:     /mensaje
+    defaults: { _controller: PruebaBundle:Producto:mensaje }
+    
+    
+
 modeloingresoprod:
     path:     /modeloingresoprod
     defaults: { _controller: PruebaBundle:Producto:modcrearProducto }
+    
+administrador:
+    path:     /administrador
+    defaults: { _controller: PruebaBundle:Default:registroAdmin }

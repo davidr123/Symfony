@@ -15,8 +15,11 @@ body {
     padding: 5px 0 0 10px;
 }  
 img { 
-    border: 0;
+    border: 0px;
+    
 }
+
+
 
 h1 { 
     font: normal 175% Arial, Helvetica, sans-serif;
@@ -35,11 +38,16 @@ a {
 
 
 
-a2{ 
-    color: #2F291D;
-   
-    font-weight: bold;
-   
+
+
+
+h2 { 
+    font: normal 175% Arial, Helvetica, sans-serif;
+    color: #FFF;
+    letter-spacing: -1px;
+  
+    text-align: center;
+   font:bold 120px;
 }
 
 
@@ -62,13 +70,20 @@ ul1 {
     font-size: 65%;
 }
 
-li1{
+li1 {
     
+    margin-top: 60px;
      list-style: none;
     padding: 0 0 0 0px;
     margin: 2px 0 0 0;
     display: inline;
-   margin-top: 12px;
+   
+    
+}
+
+.enlace {
+    margin-top: 30px;
+     color: #FFF;
     
 }
 
@@ -84,24 +99,61 @@ li1{
 
 
 #menubar { 
-    width: 920px;
+    width: 1625px;
     height: 50px;
     background: RGB(0,28,63);
     border-radius: 0px 0px 15px 15px;
 } 
 
+#menubar2 { 
+    width: 200px;
+    height: 1625px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+    float: left;
+} 
+
+h3 { 
+    font: normal 125% Arial, Helvetica, sans-serif;
+    color: #FFF;
+    letter-spacing: -1px;
+  margin-top: 80px;
+    text-align: center;
+   font:bold 120px;
+}
+
+
+
+
+#menuadmin { 
+    width: 350px;
+    height: 350px;
+   margin-top: 30px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+    margin float: right;
+} 
+
 
 
 #menubotones { 
-
-
- margin-top: 30px;
     width: 920px;
     height: 50px;
     
     border-radius: 0px 0px 15px 15px;
     
-   
+    margin-top: 20px;
+} 
+
+
+
+#contactos { 
+    width: 390px;
+    height: 200px;
+    
+    border-radius: 0px 0px 15px 15px;
+    
+    margin-top: 20px;
 } 
   
   
@@ -114,11 +166,16 @@ li1{
 }
   
 #menu_items { 
-
-
     float: right;
     width: 560px;
 }
+
+
+#menu_items2 { 
+    float: center;
+    width: 560px;
+}
+
 
 
 #menu_registrologin { 
@@ -185,4 +242,13 @@ ul#menu li.current a, ul#menu li:hover a {
   
     border-radius: 0px 0px 15px 15px;
 } 
+
+
+.person {
+    display: inline-block;
+    margin-right: 30px;
+    color: aqua;
+}
+
+
 

@@ -122,3 +122,21 @@ p{
 p#bot{
     padding-top: 10px;
 }
+
+
+
+
+
+a3{ 
+    color: #2F291D;
+    font-weight: bold;
+    font-size: 10px;
+  
+   
+}
+
+
+
+a3:hover { 
+    text-decoration: none;
+}

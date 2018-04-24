@@ -1,0 +1,94 @@
+<html>
+    
+    {% block head %}
+<head>
+    <style> 
+        
+        
+        
+    
+       
+        
+     * {
+        box-sizing: border-box;
+        margin: 0 auto; 
+    }
+        
+  div.container {
+        width: 80%;
+        border: 3px solid black;
+        background-color: aqua;
+    }
+
+    
+    </style>
+    {% block stylesheets %}
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+    
+    {% endblock %}
+{% endblock %}
+</head>
+  {% block body %}
+<body>
+  <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+         
+	     <img src="{{ asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          
+     
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items2">
+	   <h2 font aling="center">ADMINISTRADOR</h2>
+      </div> <!-- termina menu_tems -->
+  
+      
+      
+    </div>
+    	<div id="menubar2">
+          
+               <a class="enlace"href="{{path('prueba_second')}}"><h3>Tabla Usuario</h3></a> 
+            
+             <a class="enlace"href="{{path('prueba_second')}}"><h3>Tabla Producto</h3></a> 
+                 
+                  <a class="enlace"href="{{path('prueba_second')}}"><h3>Tabla Ficha Tecnica</h3></a> 
+
+       
+    </div>
+      
+ 
+    
+   
+
+</div> <!-- fin opcion-->
+ 
+  
+      
+ 
+            
+          
+    
+    
+    
+       
+    
+
+  
+    
+    
+    </body>
+</html>
+          {% endblock %}
