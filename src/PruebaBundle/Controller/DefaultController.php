@@ -13,6 +13,11 @@ class DefaultController extends Controller
     {
         return $this->render('@Prueba/Default/index.html.twig');
     }
+    
+      public function pruebaAction()
+    {
+        return $this->render('@Prueba/Default/index.html.twig');
+    }
   
     public function secondAction()
     {
@@ -26,7 +31,16 @@ class DefaultController extends Controller
     }
     public function loginAction()
     {
-        return $this->render('@Prueba/Default/login.html.twig');
+    $error = $authenticationUtils->getLastAuthenticationError();
+
+    // last username entered by the user
+    $lastUsername = $authenticationUtils->getLastUsername();
+
+    return $this->render('@Prueba/Default/login.html.twig', array(
+        'last_username' => $lastUsername,
+        'error'         => $error,
+    ));
+        
     }
     
     public function registroAction()

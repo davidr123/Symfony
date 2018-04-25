@@ -1,6 +1,8 @@
 prueba_homepage:
     path:     /
     defaults: { _controller: PruebaBundle:Default:index }
+    
+
 prueba_second:
     path:     /second
     defaults: { _controller: PruebaBundle:Default:second }
@@ -15,15 +17,15 @@ productos:
     path:     /productos
     defaults: { _controller: PruebaBundle:Producto:all }
 
-registr o:
+registro:
     path:     /registro
     defaults: { _controller: PruebaBundle:Default:registro }
 ingresoprod:
-    path:     /ingresoprod
+    path:     /admin/ingresoprod
     defaults: { _controller: PruebaBundle:Producto:dibujarFormProducto }
 
 ingresofichaprod:
-    path:     /ingresoficha
+    path:     /admin/ingresoficha
     defaults: { _controller: PruebaBundle:Producto:dibujarFormFicha }
 
 mensaje:
@@ -33,9 +35,13 @@ mensaje:
     
 
 modeloingresoprod:
-    path:     /modeloingresoprod
+    path:    /admin/modeloingresoprod
     defaults: { _controller: PruebaBundle:Producto:modcrearProducto }
     
 administrador:
     path:     /administrador
-    defaults: { _controller: PruebaBundle:Default:registroAdmin }
+    defaults: { _controller: PruebaBundle:Default:registroAdminregiste }
+
+register_user:
+    path:     /admin/ingresouser
+    defaults: { _controller: PruebaBundle:User:register }

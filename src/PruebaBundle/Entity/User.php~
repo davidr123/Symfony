@@ -144,46 +144,22 @@ class User implements UserInterface
         return $this->password;
     }
     
- 
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
     public function getSalt(){
         return null;
     }
      public function  getRoles(){
-        return array($this->getRole());
+        return null;
     }
      public function eraseCredentials(){
       
-    }
-
-    /**
-     * Set role
-     *
-     * @param string $role
-     *
-     * @return User
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    /**
-     * Get role
-     *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-    
-     public function setPlainPassword($plainPassword){
-         $this->plainPassword=$plainPassword;
-        return $this;
-    }
-    public function getPlainPassword(){
-        return $this->plainPassword;
     }
 }

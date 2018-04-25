@@ -58,13 +58,7 @@ class Productos
      */
     private $imagen;
 
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Ficha_tecnica", inversedBy="productos")
-     * @ORM\JoinColumn(name="ficha_tecnica_id", referencedColumnName="id")
-     */
-    private $ficha_tecnica;
+   
     
 
     /**
@@ -198,27 +192,5 @@ class Productos
         return $this->imagen;
     }
 
-    /**
-     * Set fichaTecnica
-     *
-     * @param \PruebaBundle\Entity\Ficha_tecnica $fichaTecnica
-     *
-     * @return Productos
-     */
-    public function setFichaTecnica(\PruebaBundle\Entity\Ficha_tecnica $fichaTecnica = null)
-    {
-        $this->ficha_tecnica = $fichaTecnica;
-
-        return $this;
-    }
-
-    /**
-     * Get fichaTecnica
-     *
-     * @return \PruebaBundle\Entity\Ficha_tecnica
-     */
-    public function getFichaTecnica()
-    {
-        return $this->ficha_tecnica;
-    }
+  
 }

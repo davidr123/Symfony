@@ -160,4 +160,28 @@ class Ficha_Tecnica
     {
         return $this->productosIdProducto;
     }
+
+    /**
+     * Set producto
+     *
+     * @param \PruebaBundle\Entity\Productos $producto
+     *
+     * @return Ficha_Tecnica
+     */
+    public function setProducto(\PruebaBundle\Entity\Productos $producto = null)
+    {
+        $this->producto = $producto;
+
+        return $this;
+    }
+
+    /**
+     * Get producto
+     *
+     * @return \PruebaBundle\Entity\Productos
+     */
+    public function getProducto()
+    {
+        return $this->producto;
+    }
 }

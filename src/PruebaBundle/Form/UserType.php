@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType ;
 
 class UserType extends AbstractType
 {
@@ -20,9 +21,10 @@ class UserType extends AbstractType
         $builder
             ->add('username', TextType::class)
             ->add('email', EmailType::class)
+            ->add('role', TextType::class)
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Contraseña'
+                'first_options'  => array('label' => 'Contraseña'),
                 'second_options' => array('label' => 'Repite Contraseña'),
             ))
              ->add('guardar', SubmitType::class);
@@ -36,13 +38,7 @@ class UserType extends AbstractType
         ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'pruebabundle_user';
-    }
+
 
 
 }
