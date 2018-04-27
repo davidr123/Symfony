@@ -57,14 +57,14 @@
         
     <div id="menubotones">
            
+           <form action="{{path('prueba_buscar')}}" method="post">
+           <input type="text" size="15" maxlength="30" placeholder="Nombre Vulgar" name="nombrevul">
+           <input type="text" size="15" maxlength="30" placeholder="Nombre Cientifico" name="nombrecien">
            
-           <input type="text" size="15" maxlength="30" placeholder="Nombre Vulgar" name="nombre">
-            <input type="text" size="15" maxlength="30" placeholder="Nombre Cientifico" name="nombre">
-           
-        <a href="{{path('prueba_homepage')}}"><button>Buscar</button>   </a>
+       <button>Buscar</button>   
        <a href="buscar.php"><button>Restablecer</button>   </a>
         <a href="buscar.php"><button>Ver Imagen</button>   </a>
-        
+        </form>
          </div>
         
         
@@ -86,7 +86,7 @@
                  {% for producto in productos %}
                 <tr>
                 <td> {{producto.id}}</td>
-                 <td> {{producto.nombrevulgar}}</td>
+                 <td> {{producto.nombrevulgar}}--{{producto.nombrecientifico}}--{{producto.nombreingles}}</td>
                 <td> {{producto.fuente}}</td>
                  </tr>
                  {% endfor %}

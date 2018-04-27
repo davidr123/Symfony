@@ -25,15 +25,21 @@ security:
             security: false
         
         admin:
-           pattern: ^/admin
+           pattern: ^/
            anonymous: ~
            provider: productosdb
            form_login:
-             login_path: /admin/login
-             check_path: /admin/login
-                
+             login_path: /login
+             check_path: /login
+             use_referer: true
+           logout:
+                path:   /logout
+                target: / 
+               
+         
         main:
             anonymous: ~
+            
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -43,6 +49,10 @@ security:
             #form_login: ~
             
     access_control:
-        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/second*, roles: [ROLE_VISITANTE,ROLE_ADMIN] }
+        
+       
+       
        

@@ -43,7 +43,7 @@ class ProductoController extends Controller
          
   
  
-          $form = $this->createForm(ProductosType::class, $producto);
+        $form = $this->createForm(ProductosType::class, $producto);
         $form->handleRequest($request);
  
     if ($form->isSubmitted() && $form->isValid())
@@ -75,6 +75,25 @@ class ProductoController extends Controller
        
     
       return $this->render('@Prueba/Productos/mensaje.html.twig');
+     
+     }
+    
+        public function buscarProductoAction(Request $request)
+    {   
+        $repository=$this->getDoctrine()->getRepository('PruebaBundle:Productos');
+        $var=$request->request->get("nombrevul");
+        if($var==null){
+        $var=$request->request->get("nombrecien");
+        $producto = $repository->findBy(
+         array('nombrecientifico' => $var)
+          );
+        }
+        $producto = $repository->findBy(
+    array('nombrevulgar' => $var)
+);
+
+        return $this->render('@Prueba/Productos/index.html.twig', array('productos'=>$producto));
+      
      
      }
     

@@ -2,7 +2,10 @@ prueba_homepage:
     path:     /
     defaults: { _controller: PruebaBundle:Default:index }
     
-
+prueba_buscar:
+     path:     /productos/buscar
+     defaults: { _controller: PruebaBundle:Producto:buscarProducto }
+    
 prueba_second:
     path:     /second
     defaults: { _controller: PruebaBundle:Default:second }

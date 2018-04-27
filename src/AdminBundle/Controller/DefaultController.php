@@ -16,17 +16,24 @@ class DefaultController extends Controller
     }
      public function loginAction(Request $request)
     {
-     
+      $u=$this->getUser();
+    if($u!=null){
+        $role=$u->getRole();
+        if($role=='ROLE_VISITANTE'){
+            return $this->redirectToRoute('prueba_home');
+        }
+    }
     $authenticationUtils= $this->get('security.authentication_utils');     
              // get the login error if thtilsere is one
     $error = $authenticationUtils->getLastAuthenticationError();
 
     // last username entered by the user
     $lastUsername = $authenticationUtils->getLastUsername();
-
+    
     return $this->render('@Admin/Default/login.html.twig', array(
         'last_username' => $lastUsername,
         'error'         => $error,
+       
     ));
         
     }
