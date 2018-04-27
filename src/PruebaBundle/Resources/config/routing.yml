@@ -5,7 +5,11 @@ prueba_homepage:
 prueba_buscar:
      path:     /productos/buscar
      defaults: { _controller: PruebaBundle:Producto:buscarProducto }
-    
+
+prueba_ficha:
+     path:     /productos/ficha
+     defaults: { _controller: PruebaBundle:Producto:fichaProducto }
+     
 prueba_second:
     path:     /second
     defaults: { _controller: PruebaBundle:Default:second }

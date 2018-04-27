@@ -82,17 +82,28 @@ class ProductoController extends Controller
     {   
         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Productos');
         $var=$request->request->get("nombrevul");
-        if($var==null){
+        if($var==""){
         $var=$request->request->get("nombrecien");
         $producto = $repository->findBy(
          array('nombrecientifico' => $var)
           );
-        }
+        }else{
         $producto = $repository->findBy(
-    array('nombrevulgar' => $var)
-);
-
+         array('nombrevulgar' => $var)
+         );
+        }
         return $this->render('@Prueba/Productos/index.html.twig', array('productos'=>$producto));
+      
+     
+     }
+     public function fichaProductoAction(Request $request)
+    {   
+         $var=$request->request->get("id");
+         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Ficha_Tecnica');
+         $ficha = $repository->findBy(
+         array('producto' => $var)
+          );
+        return $this->render('@Prueba/Productos/fichatecnica.html.twig', array('fichas'=>$ficha));
       
      
      }
