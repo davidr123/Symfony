@@ -1,11 +1,8 @@
 {% block head %}
 <head>
-        <style> 
-     
- 
-     
-        
-     * {
+<style>
+
+   * {
         box-sizing: border-box;
         margin: 0 auto; 
     }
@@ -16,20 +13,19 @@
         background-color: aqua;
     }
 
+</style>
     
-    </style>
-{% block stylesheets %}
+    {% block stylesheets %}
   <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
 {% endblock %}
 {% endblock %}
-    </head>
-{% block body %}
-<body>
-        
-         
+</head>
 
-	<div id="menubar">
+{% block body %}
+
+ <body>  
+     	<div id="menubar">
         
         
         
@@ -48,24 +44,72 @@
           <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
           <li class="current"><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
           <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
-          <li><a href="{{path('prueba_login')}}">login</a></li>
+              <li><a href="{{path('prueba_login')}}">login</a></li>
   
         </ul>
       </div> <!-- termina menu_tems -->
     </div> <!-- termina menubar-->	
-        
-        
-   
-        
-         {% for ficha in fichas %}
-                 {{ficha.nutritivo}}
-                 {% endfor %}
+     
+       <div id="seccion3" class="tablaficha">
+               <table border="2px" > <!-- Lo cambiaremos por CSS -->
+            <tr>
+                
+                <td  bgcolor=RGB(0,28,63)>  <font color= "white">Informe Completo </font></td>
            
-          
-               
+            </tr>
+            <tr>
+                <td colspan="2">camaron </td>
+                
+          </tr>
+              </table>
+              
+            
+        </div>
+        
+     
+     <div id="menuiconos">
+      <img src="..//htmlsym/images/regresar.png" height="20px" width="20px"   accesskey=""  > 
+
+        
+           <img src="..//htmlsym/images/imprimir.png" height="20px" width="20px"   accesskey=""  > 
+             <img src="..//htmlsym/images/descarga.png" height="20px" width="20px"   accesskey=""  > 
+         </div>
+        
+          <div id="seccion2">
+              
+             <table border="2px" class="tablaficha"> <!-- Lo cambiaremos por CSS -->
+            <tr>
+                
+                <td  bgcolor=RGB(0,28,63)>  <font color= "white">NUTRITIVO</font></td>
+                <td bgcolor=RGB(0,28,63) > <font color= "white">VALOR X 100GR</font></td>
+                <td bgcolor=RGB(0,28,63) > <font color= "white">METODO</font></td>
+            </tr>
+         
+           
+               {% for ficha in fichas %}
+                <tr>
+                <td> {{ficha.nutritivo}}</td>
+                
+                <td> {{ficha.valor100gr}}</td>
+                <td> {{ficha.metodo}}</td>
+                 </tr>
+                 {% endfor %}
+            
+            
+            
+     
+     
+     
+   
+       
+                
+         </table>
                 
            
-            
+    </div>
+                 
+          
+
             
             
               
@@ -73,7 +117,7 @@
        
        
        
-       -
+       
              
             
     </body>

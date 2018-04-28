@@ -68,9 +68,9 @@
          </div>
         
         
-            <div id="seccion2">
+            <div id="seccion2" > 
               
-             <table border="2px"> 
+             <table border="2px" class="tablaproductos"> 
             <tr>
                
                 <td  bgcolor=RGB(0,28,63)>  <font color= "white">No.</font></td>
@@ -86,7 +86,7 @@
                  {% for producto in productos %}
                 <tr>
                 <td> {{producto.id}}</td>
-                 <td> <a href="{{path('prueba_ficha',{'id': producto.id})}}">{{producto.nombrevulgar}}--{{producto.nombrecientifico}}--{{producto.nombreingles}}</a></td>
+                 <td> <a href="{{path('prueba_ficha',{'ids': producto.id})}}">{{producto.nombrevulgar}}--{{producto.nombrecientifico}}--{{producto.nombreingles}}</a></td>
                 <td> {{producto.fuente}}</td>
                  </tr>
                  {% endfor %}

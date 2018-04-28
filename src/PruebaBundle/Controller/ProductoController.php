@@ -98,9 +98,11 @@ class ProductoController extends Controller
      }
      public function fichaProductoAction(Request $request)
     {   
-         $var=$request->request->get("id");
-         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Ficha_Tecnica');
-         $ficha = $repository->findBy(
+         
+         $var=$_GET["ids"];
+          $repository=$this->getDoctrine()->getRepository('PruebaBundle:Ficha_Tecnica');
+         
+          $ficha = $repository->findBy(
          array('producto' => $var)
           );
         return $this->render('@Prueba/Productos/fichatecnica.html.twig', array('fichas'=>$ficha));
