@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 
-use PruebaBundle\Form\UserType;
-use PruebaBundle\Entity\User;
+use PruebaBundle\Form\UsuariosType;
+use PruebaBundle\Entity\Usuarios;
 
 
 class UserController extends Controller
@@ -16,8 +16,8 @@ class UserController extends Controller
  public function registerAction(Request $request)
     {
         // 1) build the form
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $user = new Usuarios();
+        $form = $this->createForm(UsuariosType::class, $user);
 
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);

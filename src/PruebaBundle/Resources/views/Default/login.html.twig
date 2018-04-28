@@ -42,7 +42,7 @@
     <div id="registrar">
 
 </div> <!-- fin opcion-->
- 
+
     <div id="envoltura">
         <div id="contenedor">
  
@@ -50,7 +50,9 @@
                 
                 <img src="{{asset('images/fondop.png')}}" height="55px" width="55px"   accesskey=""     >  
             </div>
- 
+  {% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
             <div id="cuerpo">
                 <form id="form-login" action="{{path('prueba_login')}}" method="post" autocomplete="off">
                     <!--A saber, el atributo for funciona como el id.-->
