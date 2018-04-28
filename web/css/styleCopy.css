@@ -36,11 +36,6 @@ a {
     
 }
 
-
-
-
-
-
 h2 { 
     font: normal 175% Arial, Helvetica, sans-serif;
     color: #FFF;
@@ -70,20 +65,13 @@ ul1 {
     font-size: 65%;
 }
 
-li1 {
+li1{
     
-    margin-top: 60px;
      list-style: none;
     padding: 0 0 0 0px;
     margin: 2px 0 0 0;
     display: inline;
-   
-    
-}
-
-.enlace {
-    margin-top: 30px;
-     color: #FFF;
+   margin-top: 12px;
     
 }
 
@@ -99,28 +87,11 @@ li1 {
 
 
 #menubar { 
-    width: 1625px;
+    width: 920px;
     height: 50px;
     background: RGB(0,28,63);
     border-radius: 0px 0px 15px 15px;
 } 
-
-#menubar2 { 
-    width: 200px;
-    height: 1625px;
-    background: RGB(0,28,63);
-    border-radius: 0px 0px 15px 15px;
-    float: left;
-} 
-
-h3 { 
-    font: normal 125% Arial, Helvetica, sans-serif;
-    color: #FFF;
-    letter-spacing: -1px;
-  margin-top: 80px;
-    text-align: center;
-   font:bold 120px;
-}
 
 
 
@@ -244,11 +215,16 @@ ul#menu li.current a, ul#menu li:hover a {
 } 
 
 
-.person {
-    display: inline-block;
-    margin-right: 30px;
-    color: aqua;
+.tablaproductos{
+    
+    width: 100%;
+    height: 100%;
+    
 }
 
-
-
+.tablaficha{
+    
+    width: 100%;
+    height: 100%;
+    
+}
