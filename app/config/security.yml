@@ -27,7 +27,7 @@ security:
         admin:
            pattern: ^/
            anonymous: ~
-           provider: d5gf63446vshj2
+           provider: productosdb
            form_login:
              login_path: /login
              check_path: /login
