@@ -173,7 +173,7 @@ class Usuarios implements UserInterface
     {
         $this->plainPassword = $password;
     }
-    public function getRoles() { return array('ROLE_USER'); }
+    public function getRoles() { return array($this->role); }
     public function getSalt()
     {
         // The bcrypt and argon2i algorithms don't require a separate salt.
