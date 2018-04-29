@@ -15,8 +15,8 @@ class Ficha_TecnicaType extends AbstractType
     {
         $builder->add('nutritivo')->add('valor100gr')->add('metodo')->add('productos', EntityType::class, array(
         'class' => 'PruebaBundle:Productos',
-        'choice_label'=> 'nombrevulgar',
-        'multiple'=> TRUE
+        'choice_label'=> 'nombrevulgar'
+        
         ))->add('guardar', SubmitType::class, array('label'=> 'Crear Productos'));
    
         

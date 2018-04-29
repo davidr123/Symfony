@@ -26,12 +26,18 @@ class ProductoController extends Controller
     
      public function dibujarFormFichaAction(Request $request)
     {
-
-         
-  
- 
-          $form = $this->createForm(Ficha_TecnicaType::class);
-        
+        $ficha= new Ficha_Tecnica();
+        $form = $this->createForm(Ficha_TecnicaType::class, $ficha);
+          
+        $form->handleRequest($request);
+   if ($form->isSubmitted() && $form->isValid())
+    {
+      
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($ficha);
+        $em->flush();
+        return $this->redirectToRoute('mensaje');
+    }
    
     
     return $this->render('@Prueba/Productos/ingresoprod.html.twig', ["form" => $form->createView()]);

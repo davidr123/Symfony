@@ -1,9 +1,125 @@
-{{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.role) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
-     {{ form_row(form.guardar) }}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+{% endblock %}
+
+
+{% block body %}
+
+<body>
+  <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+          
+          
+         
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+          
+    
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+         <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
+          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
+          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
+              {% if is_granted('ROLE_ADMIN') %}
+               <li><a href="{{path('logout')}}">logout</a></li>
+               <li><a href="{{path('admin_homepage')}}">administrar</a></li>
+            {% elseif is_granted('ROLE_VISITANTE') %}
+             <li><a href="{{path('logout')}}">logout</a></li>
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <li><a href="{{path('prueba_login')}}">login</a></li>
+            {% endif %}
+  
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+      
+      
+    </div>
+    
+    <div id="menusesion">
+        <h1 font color= blue>REGISTRO</h1>
+    </div>
+    
+    
+    
+     <div id="registrar">
+
+</div> <!-- fin opcion-->
+ 
+    <div id="envoltura">
+        <div id="contenedor">
+ 
+            <div id="cabecera" >
+                     <img src="{{ asset('images/fondop.png')}}" height="50px" width="50px"   accesskey=""     >     
+            </div>
+ 
+            <div id="cuerpo">
+                <form id="form-login"  autocomplete="off">
+                    <!--A saber, el atributo for funciona como el id.-->
+                    <!--ejemplo <label for="usuario">Usuario:</label>-->
+                    <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
+                    {{ form_start(form) }}
+                    <p><label >Nombre:</label></p>
+                       <p> {{ form_row(form.username) }}</p>
+ 
+                   
+                        <p>{{ form_row(form.email) }}  </p>
+            
+              
+                          <p>     {{ form_row(form.role) }} </p>
+ 
+                   
+                          <p>  {{ form_row(form.plainPassword.first) }}</p>
+    
+      
+                          <p> {{ form_row(form.plainPassword.second) }}</p>
+ 
+                   
+                       <p>       {{ form_row(form.guardar) }}</p>
+
   
 {{ form_end(form) }}
+           
+                            </form>
+            </div><!--fin cuerpo-->
+ 
+            <div id="pie">Sistema de Registro
+    
+   
+    
+    </div>
+    
+    
+    
+        </div><!-- fin contenedor -->
+    </div><!--fin envoltura-->
+    
+
+  
+    
+    
+    </body>
+{% endblock %}
+
+
+
+    
+   
+  
+   
+   
+  

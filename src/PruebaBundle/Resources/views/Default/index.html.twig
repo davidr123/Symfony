@@ -16,7 +16,7 @@
         
 	  <div id="welcome">
          
-	     <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+	     <img src="{{asset('images/logo.png')}}" height="auto" width="75px"   accesskey=""     >   
           
      
             
@@ -30,7 +30,15 @@
           <li class="current"><a href="{{path('prueba_homepage')}}">Inicio</a></li>
           <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
           <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
-              <li><a href="{{path('prueba_login')}}">login</a></li>
+         {% if is_granted('ROLE_ADMIN') %}
+               <li><a href="{{path('logout')}}">logout</a></li>
+               <li><a href="{{path('admin_homepage')}}">administrar</a></li>
+            {% elseif is_granted('ROLE_VISITANTE') %}
+             <li><a href="{{path('logout')}}">logout</a></li>
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <li><a href="{{path('prueba_login')}}">login</a></li>
+            {% endif %}
+              
   
         </ul>
       </div> <!-- termina menu_tems -->

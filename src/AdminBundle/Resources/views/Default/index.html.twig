@@ -18,31 +18,35 @@
         width: 80%;
         border: 3px solid black;
         background-color: aqua;
+      
     }
 
-    
     </style>
     {% block stylesheets %}
   <title>Login</title>
   <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+     <link rel="stylesheet" type="text/css" href="{{asset('css/estiloadmin.css')}}" />
     
     {% endblock %}
 {% endblock %}
 </head>
   {% block body %}
 <body>
+    
+	    
+    
   <div id="main">
     
 
-	<div id="menubar">
+	<div id="menubaradmin">
         
         
         
 	  <div id="welcome">
          
-	     <img src="{{ asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+	     <img src="{{ asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""  >   
           
      
             
@@ -55,28 +59,27 @@
 	   <h2 font aling="center">ADMINISTRADOR</h2>
       </div> <!-- termina menu_tems -->
   
-      <a href="{{path('logout')}}">Salir</a>
+      <div style="color: green"><button><a href="{{path('logout')}}">Salir</a></button></div>
       
     </div>
     	<div id="menubar2">
-          
-               <a class="enlace"href="{{path('register_user')}}"><h3>Tabla Usuario</h3></a> 
             
-             <a class="enlace"href="{{path('ingresoprod')}}"><h3>Tabla Producto</h3></a> 
+            <div id="menubaradmintabla">
+        
+               <a class="enlace"href="{{path('listausuario')}}"><h5>Tabla Usuario</h5></a> 
+            
+             <a class="enlace"href="{{path('listaproductos')}}"><h5>Tabla Producto</h5></a> 
                  
-                  <a class="enlace"href="{{path('ingresofichaprod')}}"><h3>Tabla Ficha Tecnica</h3></a> 
+                  <a class="enlace"href="{{path('listaficha')}}"><h5>Tabla Ficha Tecnica</h5></a> 
 
        
     </div>
       
- 
-    
-   
-
+   </div>
+     
 </div> <!-- fin opcion-->
  
   
-      
  
             
           

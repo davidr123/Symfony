@@ -1,0 +1,267 @@
+
+
+
+
+* { 
+    margin: 0 auto;
+    padding: 0;
+}
+
+body { 
+    font: normal 85% Arial, Helvetica, sans-serif;
+    background-color: rgba(68, 167, 155, 0.12);
+}
+
+#welcome { 
+    width: 350px;
+    float: left;
+    height: 45px;
+    padding: 5px 0 0 10px;
+}  
+img { 
+    border: 0px;
+    
+}
+
+
+
+h1 { 
+    font: normal 175% Arial, Helvetica, sans-serif;
+    color: #667AAD;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
+    text-align: center;
+   font:bold 120px;
+}
+
+a { 
+    color: #2F291D;
+    font-weight: bold;
+    
+}
+
+h2 { 
+    font: normal 175% Arial, Helvetica, sans-serif;
+    color: #FFF;
+    letter-spacing: -1px;
+  
+    text-align: center;
+   font:bold 120px;
+}
+
+
+a:hover { 
+    text-decoration: none;
+}
+
+ul { 
+    margin: 2px 0 22px 30px;
+    line-height: 1.7em;
+    font-style: normal;
+    font-size: 100%;
+}
+
+
+ul1 { 
+    margin: 2px 0 22px 30px;
+  
+    
+    font-size: 65%;
+}
+
+li1{
+    
+     list-style: none;
+    padding: 0 0 0 0px;
+    margin: 2px 0 0 0;
+    display: inline;
+   margin-top: 12px;
+    
+}
+
+
+  #menudeloginreg {
+    margin-top: 10px;
+    width: 50px;
+    height: 70px;
+  
+    border-radius: 0px 0px 15px 15px;
+} 
+
+
+
+#menubar { 
+    width: 920px;
+    height: 50px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+} 
+
+
+
+
+#menuadmin { 
+    width: 350px;
+    height: 350px;
+   margin-top: 30px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+    margin float: right;
+} 
+
+
+
+#menubotones { 
+    width: 920px;
+    height: 50px;
+    
+    border-radius: 0px 0px 15px 15px;
+    
+    margin-top: 20px;
+} 
+
+
+
+#contactos { 
+    width: 390px;
+    height: 200px;
+    
+    border-radius: 0px 0px 15px 15px;
+    
+    margin-top: 20px;
+} 
+  
+  
+#welcome h1 a { 
+    font: normal 150% Arial, Helvetica, sans-serif;
+    letter-spacing: -3px;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 1px 1px #000;
+}
+  
+#menu_items { 
+    float: right;
+    width: 560px;
+}
+
+
+#menu_items2 { 
+    float: center;
+    width: 560px;
+}
+
+
+
+#menu_registrologin { 
+   
+    width: 100px;
+}
+  
+ul#menu { 
+    margin:0;
+    float: right;
+}
+
+ul#menu li { 
+    list-style: none;
+    padding: 0 0 0 0px;
+    margin: 2px 0 0 0;
+    display: inline;
+}
+
+ul#menu li a { 
+    float: left;
+    font: bold 120% Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    height: 24px;
+    padding: 16px 15px 10px 15px;
+ } 
+  
+ul#menu li.current a, ul#menu li:hover a { 
+    color: #2F291D;
+}
+
+#site_content { 
+    width: 1000px;
+    padding-bottom: 75px;
+    padding-left: 50px;
+} 
+
+
+#table 
+{ background-color: orange; margin: 500px; padding: 10px; }
+
+
+#menufichatecnica { 
+    width: 920px;
+    height: 50px;
+    
+    border-radius: 0px 0px 15px 15px;
+} 
+
+#menusesion {
+    margin-top: 30px;
+    width: 500px;
+    height: 35px;
+
+    border-radius: 0px 0px 15px 15px;
+} 
+
+  #menuloginreg {
+    margin-top: 10px;
+    width: 500px;
+    height: 120px;
+  
+    border-radius: 0px 0px 15px 15px;
+} 
+
+
+#menubaradmin { 
+    width: 1000x;
+    height: 100px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+} 
+
+#menubaradmintabla { 
+    float: left;
+    width: 300px;
+    height: 900px;
+    background: RGB(0,28,63);
+    border-radius: 0px 0px 15px 15px;
+} 
+
+    
+h5 { 
+    font: normal 400% Arial, Helvetica, sans-serif;
+    color: #667AAD;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
+    text-align: center;
+   font:bold 120px;
+}
+
+h6 { 
+    font: normal 210% Arial, Helvetica, sans-serif;
+    color: RGB(0,28,63);
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
+    text-align: center;
+   font:bold 120px;
+}
+    
+
+
+h5 { 
+    font: normal 190% Arial, Helvetica, sans-serif;
+    color: #FFF;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
+    text-align: center;
+   font:bold 120px;
+    margin-top: 30px;
+}
+   

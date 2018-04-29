@@ -10,7 +10,7 @@
 
 <body>
         
-         
+         <div id="main">
 
 	<div id="menubar">
         
@@ -19,7 +19,7 @@
 	  <div id="welcome">
          
 	
-	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+	     <img src="{{ asset('images/logo.png')}}" height="75px" width="75px"   accesskey=""     >   
           
     
             
@@ -36,21 +36,57 @@
             
             <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
           <li class="current"><a href="{{path('prueba_contactos')}}">Contactos</a></li>
-              <li ><a href="{{path('prueba_login')}}">login</a></li>
+             {% if is_granted('ROLE_ADMIN') %}
+               <li><a href="{{path('logout')}}">logout</a></li>
+               <li><a href="{{path('admin_homepage')}}">administrar</a></li>
+            {% elseif is_granted('ROLE_VISITANTE') %}
+             <li><a href="{{path('logout')}}">logout</a></li>
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <li><a href="{{path('prueba_login')}}">login</a></li>
+            {% endif %}
   
         </ul>
       </div> <!-- termina menu_tems -->
         
-        
+             
+     
         
     </div> <!-- termina menubar-->
-
-        
-          <div id="contactos">
-              <h7>Msg. Daniela Peñafiel - FCV(Facultad Ciencias de la vida)</h7>   <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >
-               <h7>Msg. Diego Carrera - EDCOM(Escuela de Diseño y Comunicacion Visual)</h7>
-              <h7>Estudiante-Pregrado. Freddy Rada - EDCOM(Escuela de Diseño y Comunicacion Visual)</h7>
-        </div>
-        
+ <div id="fotodaniela">
+         <img src="{{ asset('images/daniela peñafiel.jpg')}}" height="200px" width="200px"   accesskey=""     >  
+     
+      <div id="infodaniela">
+     <h7>Msc. Daniela Peñafiel (Facultad Ciencias de la Vida - ESPOL) 
+            dpeñafiel@espol.edu.ec      </h7>
+          
+     </div>
+          </div>
+             
+             <div id="fotocarrera">
+         <img src="{{ asset('images/carrera.png')}}" height="200px" width="200px"   accesskey=""     >  
+                 
+                 <div id="infocarrera">
+     <h7>Msc. Diego Carrera (Escuela de Diseño y Comunicacion Visual- ESPOL) 
+            dcarrera@espol.edu.ec      </h7>
+          
+     </div>
+             </div>
+             
+             
+              <div id="fotofreddy">
+         <img src="{{ asset('images/freddy.jpg')}}" height="200px" width="200px"   accesskey=""     >  
+     
+      <div id="infodaniela">
+     <h7>Estudiante-Pregrado. Freddy Rada A. (Facultad Ciencias de la Vida - ESPOL) 
+            frada@espol.edu.ec      </h7>
+          
+     </div>
+          </div>
+             
+             
+             
+             
+	  </div>
+          
     </body>
 {% endblock %}

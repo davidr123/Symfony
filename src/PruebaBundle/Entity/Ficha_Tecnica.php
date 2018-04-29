@@ -137,38 +137,16 @@ class Ficha_Tecnica
         return $this->metodo;
     }
 
-    /**
-     * Set productosIdProducto
-     *
-     * @param integer $productosIdProducto
-     *
-     * @return Ficha_Tecnica
-     */
-    public function setProductosIdProducto(\PruebaBundle\Entity\Productos $producto = null)
-    {
-        $this->productosIdProducto = $producto;
-
-        return $this;
-    }
+    
 
     /**
-     * Get productosIdProducto
-     *
-     * @return int
-     */
-    public function getProductosIdProducto()
-    {
-        return $this->productosIdProducto;
-    }
-
-    /**
-     * Set producto
+     * Set productos
      *
      * @param \PruebaBundle\Entity\Productos $producto
      *
      * @return Ficha_Tecnica
      */
-    public function setProducto(\PruebaBundle\Entity\Productos $producto = null)
+    public function setProductos(\PruebaBundle\Entity\Productos $producto = null)
     {
         $this->producto = $producto;
 
@@ -176,11 +154,11 @@ class Ficha_Tecnica
     }
 
     /**
-     * Get producto
+     * Get productos
      *
      * @return \PruebaBundle\Entity\Productos
      */
-    public function getProducto()
+    public function getProductos()
     {
         return $this->producto;
     }

@@ -16,6 +16,7 @@ class UserController extends Controller
  public function registerAction(Request $request)
     {
         // 1) build the form
+       
         $user = new Usuarios();
         $form = $this->createForm(UsuariosType::class, $user);
 

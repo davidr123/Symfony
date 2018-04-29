@@ -2,6 +2,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
  <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/estiloadmin.css')}}" />
 {% endblock %}
 
 
@@ -11,7 +12,7 @@
   <div id="main">
     
 
-	<div id="menubar">
+	<div id="menubaradmin">
         
         
         
@@ -19,7 +20,7 @@
           
           
          
-	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+	     <img src="{{ asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
           
     
             
@@ -33,7 +34,14 @@
          <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
           <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
           <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
-              <li class="current"><a href="{{path('prueba_login')}}">login</a></li>
+              {% if is_granted('ROLE_ADMIN') %}
+               <li><a href="{{path('logout')}}">logout</a></li>
+               <li><a href="{{path('admin_homepage')}}">administrar</a></li>
+            {% elseif is_granted('ROLE_VISITANTE') %}
+             <li><a href="{{path('logout')}}">logout</a></li>
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <li><a href="{{path('prueba_login')}}">login</a></li>
+            {% endif %}
   
   
         </ul>
@@ -44,7 +52,7 @@
     </div>
     
     <div id="menusesion">
-        <h1 font color= blue>REGISTRO</h1>
+        <h6 font color= blue>REGISTRO</h6>
     </div>
     
     
@@ -62,33 +70,26 @@
  
             <div id="cuerpo">
                 <form id="form-login" action="" method="post" autocomplete="off">
-                    <!--A saber, el atributo for funciona como el id.-->
-                    <!--ejemplo <label for="usuario">Usuario:</label>-->
-                    <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
-                    <p><label >Nombre:</label></p>
-                       <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+                   {{ form_start(form) }}
+                       <p> {{ form_row(form.username) }}</p>
  
-                    <p><label>Cedula/RUC:</label></p>
-                        <p>  <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+                   
+                        <p>{{ form_row(form.email) }}  </p>
             
-              <p><label >Telefono:</label></p>
-                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+              <div style="background-color: red;display: none !important" ><p  > {{ form_row(form.role) }}</p></div>
+                    
  
-                    <p><label>Correo Electronico:</label></p>
-                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+                   
+                          <p>  {{ form_row(form.plainPassword.first) }}</p>
     
-       <p><label >Direccion:</label></p>
-                          <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+      
+                          <p > {{ form_row(form.plainPassword.second) }}</p>
  
-                    <p><label>Usuario:</label></p>
-                       <p>    <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
+                   
+                       <p>       {{ form_row(form.guardar) }}</p>
 
-<p><label>Contraseña:</label></p>
-                         <p> <input name="usuario" type="text" id="usuario" placeholder="Ingresa Nombre" autofocus="" required=""></p>
- 
-                    <p id="bot"><input type="submit" id="submit" name="submit" value="Registar" class="boton"></p>
-            
-           
+  
+                      {{ form_end(form) }}
                             </form>
             </div><!--fin cuerpo-->
  

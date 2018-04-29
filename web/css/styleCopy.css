@@ -76,6 +76,9 @@ li1{
 }
 
 
+
+
+
   #menudeloginreg {
     margin-top: 10px;
     width: 50px;
@@ -87,12 +90,81 @@ li1{
 
 
 #menubar { 
-    width: 920px;
-    height: 50px;
+    width: 1604px;
+    height: 80px;
+    background: RGB(0,28,63);
+    
+}
+
+#fotodaniela{ 
+    width: 100px;
+    
+   
+    padding-left: 50px;
+    margin-top: 100px;
+    float: left;
+} 
+
+#infodaniela{ 
+    height: 300px;
+    float: left;
+} 
+
+
+
+#fotocarrera { 
+   width: 100px;
+    padding-bottom: 75px;
+    padding-left: 370px;
+    margin-top: 100px;
+    float: left;
+} 
+
+
+
+
+#infocarrera{ 
+    height: 300px;
+    float: left;
+} 
+
+
+
+#fotofreddy { 
+  width: 100px;
+    padding-bottom: 75px;
+    padding-left: 400px;
+    margin-top: 100px;
+    float: left;
+} 
+
+#infodaniela{ 
+    height: 300px;
+    float: left;
+} 
+
+
+
+
+h7 { 
+    font: normal 175% Arial, Helvetica, sans-serif;
+   color: RGB(0,28,63);
+    letter-spacing: -1px;
+  
+    text-align: center;
+   font:bold 120px;
+}
+
+
+
+
+#menubaradministrador { 
+    float: left;
+    width: 100px;
+    height: 920px;
     background: RGB(0,28,63);
     border-radius: 0px 0px 15px 15px;
 } 
-
 
 
 

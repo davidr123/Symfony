@@ -7,6 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use PruebaBundle\Entity\Usuarios;
+use PruebaBundle\Form\UsuariosType;
+
+
+
 class DefaultController extends Controller
 {
     
@@ -48,12 +52,38 @@ class DefaultController extends Controller
         
     }
     
-    public function registroAction()
+    public function registroAction(Request $request)
     {
-        return $this->render('@Prueba/Default/registro.html.twig');
+        $user = new Usuarios();
+         $user->setRole("ROLE_VISITANTE");
+        $form = $this->createForm(UsuariosType::class, $user);
+
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        if ($form->isSubmitted() || $form->isValid()) {
+            $user->setRole("ROLE_VISITANTE");
+            // 3) Encode the password (you could also do this via Doctrine listener)
+            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
+
+            // 4) save the User!
+           $em = $this->getDoctrine()->getManager();
+           $em->persist($user);
+           $em->flush();
+            // ... do any other work - like sending them an email, etc
+            // maybe set a "flash" success message for the user
+
+            return $this->redirectToRoute('mensaje');
+        }
+           
+
+        return $this->render('@Prueba/Default/registro.html.twig', ["form" => $form->createView()]);
     }
     
+        
     
+    
+
      public function registroAdminAction()
     {
         return $this->render('@Prueba/Default/administrador.html.twig');
