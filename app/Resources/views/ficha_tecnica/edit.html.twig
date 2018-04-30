@@ -1,0 +1,98 @@
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{asset('css/estilologin.css')}}" />
+{% endblock %}
+
+
+{% block body %}
+
+<body>
+  <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+          
+          
+         
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+          
+    
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      
+    </div> <!-- termina menubar-->	
+      
+      
+    </div>
+    
+    <div id="menusesion">
+        <h1 font color= blue>REGISTRO</h1>
+    </div>
+    
+    
+    
+     <div id="registrar">
+
+</div> <!-- fin opcion-->
+ 
+    <div id="envoltura">
+        <div id="contenedor">
+ 
+            <div id="cabecera" >
+                     <img src="{{ asset('images/fondop.png')}}" height="50px" width="50px"   accesskey=""     >     
+            </div>
+ 
+            <div id="cuerpo">
+               
+                    <!--A saber, el atributo for funciona como el id.-->
+                    <!--ejemplo <label for="usuario">Usuario:</label>-->
+                    <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
+                  
+                   {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_ficha_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+                          
+           
+                            
+            </div><!--fin cuerpo-->
+ 
+
+    
+    
+        </div><!-- fin contenedor -->
+    </div><!--fin envoltura-->
+    
+
+  
+    
+    
+    </body>
+{% endblock %}
+
+
+
+
+
+
+

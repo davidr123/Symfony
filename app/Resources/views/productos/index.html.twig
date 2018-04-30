@@ -1,0 +1,102 @@
+
+{% block head %}
+<head>
+        <style> 
+     
+ 
+     
+        
+     * {
+        box-sizing: border-box;
+        margin: 0 auto; 
+    }
+        
+  div.container {
+        width: 80%;
+        border: 3px solid black;
+        background-color: aqua;
+    }
+
+    
+    </style>
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styleCopy.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}" />
+{% endblock %}
+{% endblock %}
+    </head>
+{% block body %}
+         <div id="main">
+    
+
+	<div id="menubar">
+        
+        
+        
+	  <div id="welcome">
+          
+          
+         
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
+          
+    
+            
+               
+          
+          
+	  </div> <!-- termina welcome-->
+        
+      <div id="menu_items">
+	    <ul id="menu">
+          <ul><li><a href="{{path('ingresoprod')}}">Nuevo</a></li>
+             <li><a href="{{path('admin_homepage')}}">Menú</a></li>
+             </ul>
+           
+  
+        </ul>
+      </div> <!-- termina menu_tems -->
+    </div> <!-- termina menubar-->	
+      
+      
+    </div> 
+    
+<div id="seccion2" > 
+          <h1>Productos list</h1>    
+             <table border="2px" class="tablaproductos"> 
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrevulgar</th>
+                <th>Nombrecientifico</th>
+                <th>Nombreingles</th>
+                <th>Fuente</th>
+                <th>Imagen</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+            <tr>
+                <td><a href="{{ path('admin_productos_show', { 'id': producto.id }) }}">{{ producto.id }}</a></td>
+                <td>{{ producto.nombrevulgar }}</td>
+                <td>{{ producto.nombrecientifico }}</td>
+                <td>{{ producto.nombreingles }}</td>
+                <td>{{ producto.fuente }}</td>
+                <td>{{ producto.imagen }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_productos_show', { 'id': producto.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_productos_edit', { 'id': producto.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

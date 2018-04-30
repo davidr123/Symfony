@@ -1,0 +1,24 @@
+admin_usuarios_index:
+    path:     /
+    defaults: { _controller: "PruebaBundle:Usuarios:index" }
+    methods:  GET
+
+admin_usuarios_show:
+    path:     /{id}/show
+    defaults: { _controller: "PruebaBundle:Usuarios:show" }
+    methods:  GET
+
+admin_usuarios_new:
+    path:     /new
+    defaults: { _controller: "PruebaBundle:Usuarios:new" }
+    methods:  [GET, POST]
+
+admin_usuarios_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PruebaBundle:Usuarios:edit" }
+    methods:  [GET, POST]
+
+admin_usuarios_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PruebaBundle:Usuarios:delete" }
+    methods:  DELETE

@@ -105,7 +105,7 @@ li1{
     height: 350px;
    margin-top: 30px;
     background: RGB(0,28,63);
-    border-radius: 0px 0px 15px 15px;
+   
     margin float: right;
 } 
 
@@ -223,7 +223,7 @@ ul#menu li.current a, ul#menu li:hover a {
     width: 1000x;
     height: 100px;
     background: RGB(0,28,63);
-    border-radius: 0px 0px 15px 15px;
+   
 } 
 
 #menubaradmintabla { 

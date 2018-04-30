@@ -10,6 +10,7 @@ use PruebaBundle\Entity\Ficha_Tecnica;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use PruebaBundle\Form\ProductosType;
 use PruebaBundle\Form\Ficha_TecnicaType;
 
@@ -36,7 +37,7 @@ class ProductoController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($ficha);
         $em->flush();
-        return $this->redirectToRoute('mensaje');
+         return $this->redirectToRoute('admin_ficha_show', array('id' => $ficha->getId()));
     }
    
     
@@ -46,18 +47,36 @@ class ProductoController extends Controller
      public function dibujarFormProductoAction(Request $request)
     {
        $producto = new Productos();
-         
-  
+
  
         $form = $this->createForm(ProductosType::class, $producto);
         $form->handleRequest($request);
- 
+                 
+
     if ($form->isSubmitted() && $form->isValid())
     {
+                  // Recogemos el fichero
+        $file=$form['imagen']->getData();
+
+        // Sacamos la extensión del fichero
+        $ext=$file->guessExtension();
+
+        // Le ponemos un nombre al fichero
+        $file_name=time().".".$ext;
+
+        // Le ponemos un nombre al fichero
+        $file_name=time();
+
+        // Guardamos el fichero en el directorio uploads que estará en el directorio /web del framework
+
+        $file->move("images", $file_name);
+
+        // Establecemos el nombre de fichero en el atributo de la entidad
+        $producto->setImagen($file_name);
         $em = $this->getDoctrine()->getManager();
         $em->persist($producto);
         $em->flush();
-        return $this->redirectToRoute('mensaje');
+         return $this->redirectToRoute('admin_productos_show', array('id' => $producto->getId()));
     }
    
     
@@ -105,13 +124,16 @@ class ProductoController extends Controller
      public function fichaProductoAction(Request $request)
     {   
          
-         $var=$_GET["ids"];
+          $var=$_GET["ids"];
           $repository=$this->getDoctrine()->getRepository('PruebaBundle:Ficha_Tecnica');
-         
           $ficha = $repository->findBy(
          array('producto' => $var)
           );
-        return $this->render('@Prueba/Productos/fichatecnica.html.twig', array('fichas'=>$ficha));
+         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Productos');
+         $produ=$repository->findBy(
+         array('id' => $var)
+          );
+        return $this->render('@Prueba/Productos/fichatecnica.html.twig', array('fichas'=>$ficha,'produ'=>$produ ));
       
      
      }

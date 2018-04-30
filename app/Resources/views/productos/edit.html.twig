@@ -28,23 +28,7 @@
           
 	  </div> <!-- termina welcome-->
         
-      <div id="menu_items">
-	    <ul id="menu">
-         <li ><a href="{{path('prueba_homepage')}}">Inicio</a></li>
-          <li><a href="{{path('prueba_second')}}">Tabla de alimentos</a></li>
-          <li><a href="{{path('prueba_contactos')}}">Contactos</a></li>
-              {% if is_granted('ROLE_ADMIN') %}
-               <li><a href="{{path('logout')}}">logout</a></li>
-               <li><a href="{{path('admin_homepage')}}">administrar</a></li>
-            {% elseif is_granted('ROLE_VISITANTE') %}
-             <li><a href="{{path('logout')}}">logout</a></li>
-            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-            <li><a href="{{path('prueba_login')}}">login</a></li>
-            {% endif %}
-  
-  
-        </ul>
-      </div> <!-- termina menu_tems -->
+      
     </div> <!-- termina menubar-->	
       
       
@@ -68,41 +52,35 @@
             </div>
  
             <div id="cuerpo">
-                <form id="form-login"  autocomplete="off">
+                
                     <!--A saber, el atributo for funciona como el id.-->
                     <!--ejemplo <label for="usuario">Usuario:</label>-->
                     <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
-                    {{ form_start(form) }}
+                  
                     <p><label >Nombre:</label></p>
-                       <p> {{ form_row(form.username) }}</p>
+                       <p>  {{ form_start(edit_form, { 'enctype':"multipart/form-data"}) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }} </p>
  
                    
-                        <p>{{ form_row(form.email) }}  </p>
-            
-              
-                          <p>     {{ form_row(form.role) }} </p>
- 
-                   
-                          <p>  {{ form_row(form.plainPassword.first) }}</p>
-    
-      
-                          <p> {{ form_row(form.plainPassword.second) }}</p>
- 
-                   
-                       <p>       {{ form_row(form.guardar) }}</p>
-
+                         <ul>
+        <li>
+            <a href="{{ path('admin_productos_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
   
-                              {{ form_end(form) }}
+                          
            
-                            </form>
+                           
             </div><!--fin cuerpo-->
  
-            <div id="pie">Sistema de Registro
-    
-   
-    
-    </div>
-    
+
     
     
         </div><!-- fin contenedor -->
@@ -117,9 +95,17 @@
 
 
 
-    
-   
-  
-   
-   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

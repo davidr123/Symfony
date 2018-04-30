@@ -2,6 +2,7 @@
 
 namespace PruebaBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,15 +35,7 @@ class UsuariosType extends AbstractType
                 'second_options' => array('label' => 'Repite Contraseña'),
             ))
              ->add('guardar', SubmitType::class);
-         $builder
-            ->add('username', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('plainPassword', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Contraseña'),
-                'second_options' => array('label' => 'Repite Contraseña'),
-            ))
-             ->add('guardar', SubmitType::class);
+       
     }/**
      * {@inheritdoc}Password
      */

@@ -2,19 +2,3 @@ admin_homepage:
     path:     /
     defaults: { _controller: AdminBundle:Default:index }
 
-login:
-    path:     /login
-    defaults: { _controller: AdminBundle:Default:login }
-    
-listaproductos:
-    path:     /leerprodu
-    defaults: { _controller: AdminBundle:Default:leerprodu }
-
-
-listausuario:
-    path:     /leerusuario
-    defaults: { _controller: AdminBundle:Default:leerusuario }
-
-listaficha:
-    path:     /leerficha
-    defaults: { _controller: AdminBundle:Default:leerficha }

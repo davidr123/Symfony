@@ -51,16 +51,21 @@
     </div> <!-- termina menubar-->	
      
        <div id="seccion3" class="tablaficha">
-               <table border="2px" > <!-- Lo cambiaremos por CSS -->
+               <table border="2px" style="width: 2%"> <!-- Lo cambiaremos por CSS -->
             <tr>
                 
                 <td  bgcolor=RGB(0,28,63)>  <font color= "white">Informe Completo </font></td>
+                <td></td>
            
             </tr>
-            <tr>
-                <td colspan="2">camaron </td>
-                
-          </tr>
+             <tr>
+               {% for p in produ %} 
+                  
+                <td colspan="2" >{{p.nombrevulgar}} </td>
+               <img src="/symfony/web/images/{{p.imagen}}" width="10%" height="30%"> 
+                 
+                {% endfor %} 
+            </tr>
               </table>
               
             

@@ -1,3 +1,14 @@
+prueba_admin_usuarios:
+    resource: "@PruebaBundle/Resources/config/routing/usuarios.yml"
+    prefix:   /admin/usuarios/
+prueba_admin_productos:
+    resource: "@PruebaBundle/Resources/config/routing/productos.yml"
+    prefix:   /admin/productos/
+prueba_admin_ficha:
+    resource: "@PruebaBundle/Resources/config/routing/ficha_tecnica.yml"
+    prefix:   /admin/ficha/
+
+
 prueba_homepage:
     path:     /
     defaults: { _controller: PruebaBundle:Default:index }

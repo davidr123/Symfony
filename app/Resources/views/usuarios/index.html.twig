@@ -1,3 +1,4 @@
+
 {% block head %}
 <head>
         <style> 
@@ -82,21 +83,24 @@
             </tr>
          
            
-                 {% for producto in productos %}
-                <tr>
-                <td> {{producto.id}}</td>
-                 <td> {{producto.username}} </td>
-                 <td> {{producto.role}} </td>
-                 <td> {{producto.email}} </td>
-               
-                    <td><a href="buscar.php"><button>Eliminar</button>   </a> </td>
-                    <td><a href="buscar.php"><button>Actualizar</button>   </a> </td>
-                 </tr>
-                 
-                  
-        
-                 
-                 {% endfor %}
+                    {% for usuario in usuarios %}
+            <tr>
+                <td><a href="{{ path('admin_usuarios_show', { 'id': usuario.id }) }}">{{ usuario.id }}</a></td>
+                <td>{{ usuario.username }}</td>
+                <td>{{ usuario.role }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_usuarios_show', { 'id': usuario.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_usuarios_edit', { 'id': usuario.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
                
                 
            
@@ -116,3 +120,4 @@
             
     </body>
 {% endblock %}
+

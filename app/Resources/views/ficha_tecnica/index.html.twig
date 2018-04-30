@@ -1,3 +1,4 @@
+
 {% block head %}
 <head>
         <style> 
@@ -27,7 +28,8 @@
 {% block body %}
 <body>
         
-           <div id="main">
+         
+ <div id="main">
     
 
 	<div id="menubar">
@@ -60,40 +62,45 @@
       
       
     </div>
-
-
+	
         
         
-   
+    
         
         
             <div id="seccion2" > 
               
              <table border="2px" class="tablaproductos"> 
+               <thead>
             <tr>
-               <td  bgcolor=RGB(0,28,63)>  <font color= "white">ID</font></td>
-                <td  bgcolor=RGB(0,28,63)>  <font color= "white">NUTRITIVO</font></td>
-                <td bgcolor=RGB(0,28,63) > <font color= "white">VALORX100GR</font></td>
-                <td bgcolor=RGB(0,28,63) > <font color= "white">METODO</font></td>
-                <td></td>
-                <td></td>
+                <th>Id</th>
+                <th>Nutritivo</th>
+                <th>Valor100gr</th>
+                <th>Metodo</th>
+                <th>Actions</th>
             </tr>
-         
-           
-                 {% for producto in productos %}
-                <tr>
-                <td> {{producto.id}}</td>
-                 <td> {{producto.nutritivo}}</td>
-                <td> {{producto.valor100gr}}</td>
-                <td> {{producto.metodo}}</td>
-                    <td><a href="buscar.php"><button>Eliminar</button>   </a> </td>
-                    <td><a href="buscar.php"><button>Actualizar</button>   </a> </td>
-                 </tr>
-                 
-                  
-        
-                 
-                 {% endfor %}
+        </thead>
+        <tbody>
+        {% for ficha_Tecnica in ficha_Tecnicas %}
+            <tr>
+                <td><a href="{{ path('admin_ficha_show', { 'id': ficha_Tecnica.id }) }}">{{ ficha_Tecnica.id }}</a></td>
+                <td>{{ ficha_Tecnica.nutritivo }}</td>
+                <td>{{ ficha_Tecnica.valor100gr }}</td>
+                <td>{{ ficha_Tecnica.metodo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_ficha_show', { 'id': ficha_Tecnica.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_ficha_edit', { 'id': ficha_Tecnica.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    
                
                 
            
@@ -113,3 +120,4 @@
             
     </body>
 {% endblock %}
+
