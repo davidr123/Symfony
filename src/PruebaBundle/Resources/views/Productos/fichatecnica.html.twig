@@ -30,8 +30,8 @@
         
         
 	  <div id="welcome">
-        <img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
-          
+        <a href="{{path('prueba_homepage')}}"><img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
+          </a>
      
             
                
@@ -62,7 +62,7 @@
                {% for p in produ %} 
                   
                 <td colspan="2" >{{p.nombrevulgar}} </td>
-               <img src="/symfony/web/images/{{p.imagen}}" width="10%" height="30%"> 
+               <img src="{{ asset('images/')}}{{p.imagen}}" width="10%" height="30%"> 
                  
                 {% endfor %} 
             </tr>
@@ -72,13 +72,7 @@
         </div>
         
      
-     <div id="menuiconos">
-      <img src="..//htmlsym/images/regresar.png" height="20px" width="20px"   accesskey=""  > 
-
-        
-           <img src="..//htmlsym/images/imprimir.png" height="20px" width="20px"   accesskey=""  > 
-             <img src="..//htmlsym/images/descarga.png" height="20px" width="20px"   accesskey=""  > 
-         </div>
+    
         
           <div id="seccion2">
               
