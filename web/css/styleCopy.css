@@ -249,7 +249,7 @@ ul#menu li a {
  } 
   
 ul#menu li.current a, ul#menu li:hover a { 
-    color: #2F291D;
+    color: #99cdd8;
 }
 
 #site_content { 
