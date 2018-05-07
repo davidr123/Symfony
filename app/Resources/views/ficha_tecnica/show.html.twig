@@ -59,6 +59,15 @@
                   
                    <table>
         <tbody>
+            {% for p in producto %} 
+             <tr>
+                <th>Producto</th>
+                <td>{{ p.nombrevulgar }}</td>
+               
+            </tr>
+             {% endfor %} 
+            
+            
             <tr>
                 <th>Id</th>
                 <td>{{ ficha_Tecnica.id }}</td>
