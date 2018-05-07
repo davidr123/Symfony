@@ -1,8 +1,4 @@
-parameters:
-    vabadus_user_security.handler.login_success_handler.class: Vabadus\AdminBundle\Service\LoginSuccessHandler
-    
 services:
-
- vabadus_user_security.handler.login_success_handler:
-        class: %admin_user_security.handler.login_success_handler.class%
-        arguments: [@router, @security.context]
+#    prueba.example:
+#        class: PruebaBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
