@@ -58,10 +58,17 @@ class Ficha_TecnicaController extends Controller
     public function showAction(Ficha_Tecnica $ficha_Tecnica)
     {
         $deleteForm = $this->createDeleteForm($ficha_Tecnica);
+        $var=$ficha_Tecnica->getProductos()->getId();
+         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Productos');
+         $produ=$repository->findBy(
+         array('id' => $var)
+          );
 
         return $this->render('ficha_tecnica/show.html.twig', array(
             'ficha_Tecnica' => $ficha_Tecnica,
+            'producto'=> $produ,
             'delete_form' => $deleteForm->createView(),
+            
         ));
     }
 
