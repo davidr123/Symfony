@@ -59,6 +59,7 @@
                   
                
                       {{ form_start(edit_form) }}
+                  <div style="background-color: red;display: none !important" ><p  > {{ form_row(edit_form.guardar) }}</p></div>
         {{ form_widget(edit_form) }}
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
