@@ -17,6 +17,14 @@ prueba_buscar:
      path:     /productos/buscar
      defaults: { _controller: PruebaBundle:Producto:buscarProducto }
 
+
+
+
+mensaje_producto:
+     path:     /productos/mensaje
+     defaults: { _controller: PruebaBundle:Producto:mensajeProducto }
+
+
 prueba_ficha:
      path:     /productos/ficha
      defaults: { _controller: PruebaBundle:Producto:fichaProducto }

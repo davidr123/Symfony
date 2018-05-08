@@ -121,6 +121,15 @@ class ProductoController extends Controller
       
      
      }
+       public function mensajeProductoAction(Request $request){
+         
+         
+         return $this->render('@Prueba/Productos/mensajeproducto.html.twig');
+      
+         
+         
+         
+     }
      public function fichaProductoAction(Request $request)
     {   
          

@@ -127,7 +127,7 @@ class ProductosController extends Controller
             $em->flush();
             }
             else{
-                return $this->redirectToRoute('mensaje');
+                return $this->redirectToRoute('mensaje_producto');
             }
         }
 
