@@ -113,11 +113,22 @@ class ProductosController extends Controller
     {
         $form = $this->createDeleteForm($producto);
         $form->handleRequest($request);
-
+        $borrar= true;
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $fichas = $em->getRepository('PruebaBundle:Ficha_Tecnica')->findAll();
+            foreach($fichas as $f){
+                if($f->getProductos()==$producto){
+                    $borrar=false;
+                }
+            }
+            if ($borrar){
             $em->remove($producto);
             $em->flush();
+            }
+            else{
+                return $this->redirectToRoute('mensaje');
+            }
         }
 
         return $this->redirectToRoute('admin_productos_index');
