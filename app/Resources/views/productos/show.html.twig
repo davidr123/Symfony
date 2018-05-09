@@ -60,6 +60,13 @@
                  
                       <table>
         <tbody>
+               {% for p in localizacion %} 
+             <tr>
+                <th>Pais</th>
+                <td>{{ p.pais }}</td>
+               
+            </tr>
+             {% endfor %} 
             <tr>
                 <th>Id</th>
                 <td>{{ producto.id }}</td>

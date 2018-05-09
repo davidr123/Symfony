@@ -19,9 +19,7 @@
           
           
          
-	     <a href="{{path('prueba_homepage')}}"><img src="{{asset('images/logo.png')}}" height="80px" width="80px"   accesskey=""     >   
-          </a>
-     
+	     <img src="{{ asset('images/logo.png')}}" height="50px" width="50px"   accesskey=""     >   
           
     
             
@@ -59,15 +57,26 @@
                     <!--ejemplo <label for="usuario">Usuario:</label>-->
                     <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
                   
-                   {{ form_start(edit_form) }}
-                 <div style="background-color: red;display: none !important" ><p  > {{ form_row(edit_form.guardar) }}</p></div>
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+                 
+                      <table>
+       <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ localizacion.id }}</td>
+            </tr>
+            <tr>
+                <th>Pais</th>
+                <td>{{ localizacion.pais }}</td>
+            </tr>
+        </tbody>
+    </table>
 
     <ul>
         <li>
-            <a href="{{ path('admin_ficha_index') }}">Back to the list</a>
+            <a href="{{ path('admin_localizacion_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_localizacion_edit', { 'id': localizacion.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -92,10 +101,5 @@
     
     </body>
 {% endblock %}
-
-
-
-
-
 
 
