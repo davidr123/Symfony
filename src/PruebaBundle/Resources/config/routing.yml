@@ -7,6 +7,11 @@ prueba_admin_productos:
 prueba_admin_ficha:
     resource: "@PruebaBundle/Resources/config/routing/ficha_tecnica.yml"
     prefix:   /admin/ficha/
+    
+prueba_admin_localizacion:
+        resource: "@PruebaBundle/Resources/config/routing/localizacion.yml"
+        prefix:   /admin/localizacion
+
 
 
 prueba_homepage:

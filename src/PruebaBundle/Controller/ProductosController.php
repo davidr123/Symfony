@@ -58,9 +58,14 @@ class ProductosController extends Controller
     public function showAction(Productos $producto)
     {
         $deleteForm = $this->createDeleteForm($producto);
-
+          $var=$producto->getLocalizacion()->getId();
+         $repository=$this->getDoctrine()->getRepository('PruebaBundle:Localizacion');
+         $produ=$repository->findBy(
+         array('id' => $var)
+          );
         return $this->render('productos/show.html.twig', array(
             'producto' => $producto,
+            'localizacion'=> $produ,
             'delete_form' => $deleteForm->createView(),
         ));
     }

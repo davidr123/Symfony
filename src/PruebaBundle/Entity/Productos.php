@@ -57,8 +57,14 @@ class Productos
      
      */
     private $imagen;
-
-   
+     /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Localizacion", inversedBy="productos")
+     * @ORM\JoinColumn(name="localizacion_id", referencedColumnName="id")
+     */
+    
+    private $localizacion;
     
 
     /**
@@ -191,6 +197,28 @@ class Productos
     {
         return $this->imagen;
     }
+     /**
+     * Set localizacion
+     *
+     * @param \PruebaBundle\Entity\Localizacion $localizacion
+     *
+     * @return Productos
+     */
+     public function setLocalizacion(\PruebaBundle\Entity\Localizacion $localizacion = null)
+    {
+        $this->localizacion = $localizacion;
 
+        return $this;
+    }
+
+    /**
+     * Get productos
+     *
+     * @return \PruebaBundle\Entity\Localizacion
+     */
+    public function getLocalizacion()
+    {
+        return $this->localizacion;
+    }
   
 }
