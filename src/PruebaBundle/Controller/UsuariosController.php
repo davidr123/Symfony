@@ -78,6 +78,8 @@ class UsuariosController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+              $password = $this->get('security.password_encoder')->encodePassword($usuario, $usuario->getPlainPassword());
+            $usuario->setPassword($password);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_usuarios_edit', array('id' => $usuario->getId()));
